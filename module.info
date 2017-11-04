@@ -1,0 +1,6 @@
+Module: mapDatatype
+Version: 0.0.1
+Depends: map
+Depends: director
+Description: Location datatype for the director addon
+ This is a simple location datatype for the director addon with a custom control
