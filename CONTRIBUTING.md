@@ -1,6 +1,6 @@
 # <a id="contributing"></a> Contributing
 
-Icinga Web 2 Module for Maps is an open source project and lives from your ideas and contributions.
+Icinga Web 2 Module for MapDatatype is an open source project and lives from your ideas and contributions.
 
 There are many ways to contribute, from improving the documentation, submitting
 bug reports and features requests or writing code to add enhancements or fix bugs.
@@ -19,11 +19,11 @@ bug reports and features requests or writing code to add enhancements or fix bug
 
 ## <a id="contributing-intro"></a> Introduction
 
-Please consider our [roadmap](https://github.com/nbuchwitz/icingaweb2-module-map/milestones) and
-[open issues](https://github.com/nbuchwitz/icingaweb2-module-map/issues) when you start contributing
+Please consider our [roadmap](https://github.com/nbuchwitz/icingaweb2-module-mapDatatype/milestones) and
+[open issues](https://github.com/nbuchwitz/icingaweb2-module-mapDatatype/issues) when you start contributing
 to the project.
 
-Before starting your work on this Map module for Icinga Web 2, you should [fork the project](https://help.github.com/articles/fork-a-repo/)
+Before starting your work on this MapDatatype module for Icinga Web 2, you should [fork the project](https://help.github.com/articles/fork-a-repo/)
 to your GitHub account. This allows you to freely experiment with your changes.
 When your changes are complete, submit a [pull request](https://help.github.com/articles/using-pull-requests/).
 All pull requests will be reviewed and merged if they suit some general guidelines:
@@ -40,14 +40,14 @@ Please continue reading in the following sections for a step by step guide.
 and clone the repository:
 
 ```
-git clone git@github.com:dnsmichi/icingaweb2-module-map.git
-cd icingaweb2-module-map
+git clone git@github.com:dnsmichi/icingaweb2-module-mapDatatype.git
+cd icingaweb2-module-mapDatatype
 ```
 
 Add a new remote `upstream` with this repository as value.
 
 ```
-git remote add upstream https://github.com/nbuchwitz/icingaweb2-module-map.git
+git remote add upstream https://github.com/nbuchwitz/icingaweb2-module-mapDatatype.git
 ```
 
 You can pull updates to your fork's master branch:
@@ -243,7 +243,7 @@ You can help test-drive the Git master inside the
     $ git clone https://github.com/Icinga/icinga-vagrant.git
     $ cd icinga-vagrant/icinga2x
     $ vagrant up
-    $ vagrant ssh -c "cd /usr/share/icingaweb2/modules/map && sudo git pull"
+    $ vagrant ssh -c "cd /usr/share/icingaweb2/modules/mapDatatype && sudo git pull"
 
 ## <a id="contributing-patches-source-code"></a> Source Code Patches
 
