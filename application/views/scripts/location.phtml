@@ -2,21 +2,29 @@
     <?= $this->formLabel($this->element->getName(), $this->element->getLabel()); ?>
 </dt>
 <dd>
+
     <input id="<?= $this->element->getName(); ?>"
            type="text"
            name="<?= $this->element->getName(); ?>"
            value="<?= $this->element->getValue(); ?>"/>
-
+    <!-- icinga-module module-map  -->
     <div id="map-director" class="map map-home" style="height: 250px; margin-top: 0px"></div>
 
     <link rel="stylesheet" href="//unpkg.com/leaflet@1.2.0/dist/leaflet.css"
           integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ=="
           crossorigin=""/>
 
-    <button type="button" id="director-map-btn-globe" class="control-button" style="border-width: 1px;"><i class="icon-globe"></i></button>
+    <button type="button" id="director-map-btn-globe" class="control-button" style="border-width: 1px;">
+        <i class="icon-globe"></i>
+    </button>
+
     <p style="margin-top: 5px; text-align:right;">
-        <button type="button" id="director-map-btn-save" class="control-button" style="border-width: 1px;"><i class="icon-ok"></i></button>
-        <button type="button" id="director-map-btn-cancel" class="control-button" style="border-width: 1px;"><i class="icon-cancel"></i></button>
+        <button type="button" id="director-map-btn-save" class="control-button" style="border-width: 1px;">
+            <i class="icon-ok"></i>
+        </button>
+        <button type="button" id="director-map-btn-cancel" class="control-button" style="border-width: 1px;">
+            <i class="icon-cancel"></i>
+        </button>
     </p>
 
     <?php if (count($this->element->getMessages()) > 0): ?>

@@ -20,6 +20,11 @@
                 attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
             }).addTo(map);
 
+            L.control.locate({
+                    icon: 'icon-pin',
+                //strings: {title: translation['btn-locate']}
+            }).addTo(map);
+
             hideMap();
 
             map.on('click', function (e) {
@@ -44,7 +49,7 @@
                     map.removeLayer(marker);
                 }
 
-                marker = L.marker([lat, lng]);
+                marker = L.marker([lat, lng], {autoPan: true});
                 marker.addTo(map);
 
                 map.setView([lat, lng], map.getZoom());

@@ -18,14 +18,4 @@ class Location extends FormElement
 
         $this->addValidator(new Zend_Validate_Regex('/^(\-?\d+(\.\d+)?),\s*(\-?\d+(\.\d+)?)$/'));
     }
-//
-//    public function setValue($value)
-//    {
-//        if (is_array($value)) {
-//            @list($latitude, $longitude) = $value;
-//            $value = sprintf('%f,%f', $latitude, $longitude);
-//        }
-//
-//        return parent::setValue($value);
-//    }
 }

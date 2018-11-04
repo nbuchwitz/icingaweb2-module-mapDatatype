@@ -31,16 +31,6 @@ class DataTypeLocation extends DataTypeHook
 
         $element = $form->createElement('Location', $name);
 
-//        $element = $form->createElement('text', $name)
-//            ->addValidator('Regex', true,
-//                array(
-//                    'pattern' => '/^(\-?\d+(\.\d+)?),\s*(\-?\d+(\.\d+)?)$/',
-//                    'messages' => array(
-//                        'regexNotMatch' => t('Invalid coordinate format. Has to be: <latitude>,<longitude>')
-//                    )
-//                ))
-//            ->addFilter(new FilterLocation());
-
         return $element;
     }
 }
