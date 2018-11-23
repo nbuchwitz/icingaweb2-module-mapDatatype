@@ -21,7 +21,7 @@
             }).addTo(map);
 
             L.control.locate({
-                    icon: 'icon-pin',
+                icon: 'icon-pin',
                 //strings: {title: translation['btn-locate']}
             }).addTo(map);
 
@@ -85,10 +85,16 @@
                 if (field.val()) {
                     var latlng = field.val().split(",");
                     setMarker(latlng[0], latlng[1]);
+                } else if (field.attr('placeholder')) {
+                    var match = /^(\-?\d+(\.\d+)?),\s*(\-?\d+(\.\d+)?)/.exec(field.attr('placeholder'));
+
+                    if (match.length === 5) {
+                        setMarker(match[1], match[3]);
+                    }
                 }
 
                 btn_save.show();
-                btn_cancel.show()
+                btn_cancel.show();
                 btn_globe.hide();
                 field.hide();
                 $('#map-director').show();
