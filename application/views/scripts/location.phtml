@@ -8,7 +8,7 @@
            name="<?= $this->element->getName(); ?>"
            value="<?= $this->element->getValue(); ?>"
         <? if ($this->element->getAttrib('placeholder')) {
-            print 'placeholder="' . $this->element->getAttrib('placeholder') . '"';
+            print 'placeholder="' . htmlspecialchars($this->element->getAttrib('placeholder')) . '"';
         } ?>/>
     <!-- icinga-module module-map  -->
     <div id="map-director" class="map map-home" style="height: 250px; margin-top: 0px"></div>
