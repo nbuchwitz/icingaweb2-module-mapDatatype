@@ -6,7 +6,8 @@
     <input id="<?= $this->element->getName(); ?>"
            type="text"
            name="<?= $this->element->getName(); ?>"
-           value="<?= $this->element->getValue(); ?>"/>
+           value="<?= $this->element->getValue(); ?>"
+            placeholder="<?= $this->element->getAttrib('placeholder'); ?>/>
     <!-- icinga-module module-map  -->
     <div id="map-director" class="map map-home" style="height: 250px; margin-top: 0px"></div>
 
@@ -38,8 +39,7 @@
             var modulname = "mapDatatype";
             if (icinga.isLoadedModule(modulname)) {
                 icinga.modules.mapDatatype.initialize();
-            }
-            else {
+            } else {
                 icinga.loadModule(modulname)
             }
 

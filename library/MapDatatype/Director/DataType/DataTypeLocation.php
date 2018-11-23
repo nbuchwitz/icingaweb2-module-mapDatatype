@@ -2,13 +2,9 @@
 
 namespace Icinga\Module\MapDatatype\Director\DataType;
 
+use Icinga\Application\Icinga;
 use Icinga\Module\Director\Hook\DataTypeHook;
 use Icinga\Module\Director\Web\Form\QuickForm;
-use Icinga\Application\Icinga;
-
-//use Zend_Form;
-//use Icinga\Module\Map\Director\Form_Element_Time;
-//use Icinga\Module\Map\Director\ValueFilter\FilterLocation;
 
 class DataTypeLocation extends DataTypeHook
 {
