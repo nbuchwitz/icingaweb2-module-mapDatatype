@@ -1,5 +1,5 @@
 Module: mapDatatype
-Version: 0.0.1
+Version: 0.1.0
 Depends: map
 Depends: director
 Description: Location datatype for the director addon
