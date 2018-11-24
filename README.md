@@ -56,9 +56,9 @@ Tarball download (latest [release](https://github.com/nbuchwitz/icingaweb2-modul
 
 ```
 cd /usr/share/icingaweb2/modules
-wget https://github.com/nbuchwitz/icingaweb2-module-mapDatatype/archive/v0.0.1.zip
-unzip v0.0.1.zip
-mv icingaweb2-module-mapDatatype-0.0.1 mapDatatype
+wget https://github.com/nbuchwitz/icingaweb2-module-mapDatatype/archive/v0.1.0.zip
+unzip v0.1.0.zip
+mv icingaweb2-module-mapDatatype-0.1.0 mapDatatype
 ```
 
 ### Enable Icinga Web 2 module
