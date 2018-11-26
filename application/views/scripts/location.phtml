@@ -13,17 +13,19 @@
     <button type="button" id="director-map-btn-globe" class="control-button" style="border-width: 1px;">
         <i class="icon-globe"></i>
     </button>
-    <div id="col1" class="container icinga-module module-map" data-icinga-module="map" style="display: block">
+    <div id="col1" class="container icinga-module module-map" data-icinga-module="map" style="display: block;">
+
         <div id="map-director" class="map map-home" style="height: 250px; margin-top: 0px"></div>
+        <p style="margin-top: 5px; text-align:right; max-width: unset;">
+            <button type="button" id="director-map-btn-save" class="control-button" style="border-width: 1px;">
+                <i class="icon-ok"></i>
+            </button>
+            <button type="button" id="director-map-btn-cancel" class="control-button" style="border-width: 1px;">
+                <i class="icon-cancel"></i>
+            </button>
+        </p>
     </div>
-    <p style="margin-top: 5px; text-align:right;">
-        <button type="button" id="director-map-btn-save" class="control-button" style="border-width: 1px;">
-            <i class="icon-ok"></i>
-        </button>
-        <button type="button" id="director-map-btn-cancel" class="control-button" style="border-width: 1px;">
-            <i class="icon-cancel"></i>
-        </button>
-    </p>
+
 
     <?php if (count($this->element->getMessages()) > 0): ?>
         <?= $this->formErrors($this->element->getMessages()); ?>
@@ -43,4 +45,3 @@
         }, 10);
     </script>
 </dd>
-
