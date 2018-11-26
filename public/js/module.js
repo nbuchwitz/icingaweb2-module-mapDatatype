@@ -6,24 +6,44 @@
 
     MapDatatype.prototype = {
         initialize: function () {
+            // Fetch map config
+            $.getJSON(icinga.config.baseUrl + '/map/config/fetch', this._newMap).fail(function (jqxhr, textStatus, error) {
+                console.err(textStatus);
+            });
+        },
+        _newMap: function (config) {
             var btn_save = $('#director-map-btn-save');
             var btn_globe = $('#director-map-btn-globe');
             var btn_cancel = $('#director-map-btn-cancel');
 
             var field = btn_globe.parent().find("input[type=text]");
-
-            // @TODO: Change default coordinates
-            var map = L.map('map-director').setView([51.505, -0.09], 13);
+            var map = L.map('map-director').setView([config.default_lat, config.default_long], config.default_zoom);
             var marker;
 
-            L.tileLayer('//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+            L.tileLayer(config.tile_url, {
+                attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
+                maxNativeZoom: config.map_max_native_zoom,
+                maxZoom: config.map_max_zoom,
+                minZoom: config.map_min_zoom
             }).addTo(map);
 
             L.control.locate({
                 icon: 'icon-pin',
                 //strings: {title: translation['btn-locate']}
             }).addTo(map);
+
+            // search button
+            if ('opencage_apikey' in config && config.opencage_apikey != "") {
+                var options = {
+                    key: config.opencage_apikey, // TODO: Use map module's API key
+                    limit: 10,
+                };
+                var control = L.Control.openCageSearch(options).addTo(map);
+
+                control.setMarker(function (result) {
+                    setMarker(result.center.lat, result.center.lng);
+                });
+            }
 
             hideMap();
 
@@ -49,10 +69,17 @@
                     map.removeLayer(marker);
                 }
 
-                marker = L.marker([lat, lng], {autoPan: true});
+                marker = new L.Marker([lat, lng], {
+                    icon: L.AwesomeMarkers.icon({
+                        icon: 'globe',
+                        markerColor: 'blue',
+                        className: 'awesome-marker',
+                        autoPan: true
+                    })
+                });
                 marker.addTo(map);
 
-                map.setView([lat, lng], map.getZoom());
+                map.setView([lat, lng], config.max_zoom);
             }
 
             function hasMarker() {
@@ -101,6 +128,7 @@
                 map.invalidateSize();
             }
         },
+
     };
 
     Icinga.availableModules.mapDatatype = MapDatatype;
