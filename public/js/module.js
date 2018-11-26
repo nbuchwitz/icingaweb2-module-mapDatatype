@@ -7,8 +7,17 @@
     MapDatatype.prototype = {
         initialize: function () {
             // Fetch map config
+            var that = this;
             $.getJSON(icinga.config.baseUrl + '/map/config/fetch', this._newMap).fail(function (jqxhr, textStatus, error) {
-                console.err(textStatus);
+                that._newMap({
+                    "default_zoom": "4",
+                    "default_long": '13.377485',
+                    "default_lat": '52.515855',
+                    "min_zoom": "2",
+                    "max_zoom": "19",
+                    "max_native_zoom": "19",
+                    "tile_url": "//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                });
             });
         },
         _newMap: function (config) {
