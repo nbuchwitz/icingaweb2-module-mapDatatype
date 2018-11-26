@@ -10,17 +10,12 @@
         <? if ($p = $this->element->getAttrib('placeholder')) {
             print 'placeholder="' . htmlspecialchars($p) . '"';
         } ?>/>
-    <!-- icinga-module module-map  -->
-    <div id="map-director" class="map map-home" style="height: 250px; margin-top: 0px"></div>
-
-    <link rel="stylesheet" href="//unpkg.com/leaflet@1.2.0/dist/leaflet.css"
-          integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ=="
-          crossorigin=""/>
-
     <button type="button" id="director-map-btn-globe" class="control-button" style="border-width: 1px;">
         <i class="icon-globe"></i>
     </button>
-
+    <div id="col1" class="container icinga-module module-map" data-icinga-module="map" style="display: block">
+        <div id="map-director" class="map map-home" style="height: 250px; margin-top: 0px"></div>
+    </div>
     <p style="margin-top: 5px; text-align:right;">
         <button type="button" id="director-map-btn-save" class="control-button" style="border-width: 1px;">
             <i class="icon-ok"></i>
