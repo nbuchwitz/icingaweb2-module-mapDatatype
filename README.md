@@ -16,9 +16,7 @@
 
 This module allows you to easily add and change coordinates with the Icinga Director on [openstreetmap](https://www.openstreetmap.org) using [leaflet.js](http://leafletjs.com/).
 
-![Icinga Director](doc/screenshots/02-Customfield.png)
-
-![Icinga Director](doc/screenshots/022-Customfield-expanded.png)
+![Adding coordinates to a host](doc/screenshots/01-add-coordinates.gif)
 
 ## License
 
