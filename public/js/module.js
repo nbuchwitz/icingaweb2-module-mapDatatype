@@ -44,7 +44,7 @@
             // search button
             var options = {
                 limit: 5,
-                lite: true,
+                lite: 1,
             };
             var control = L.Control.openCageSearch(options).addTo(map);
 
