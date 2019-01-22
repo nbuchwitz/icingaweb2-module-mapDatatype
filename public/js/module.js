@@ -42,17 +42,15 @@
             }).addTo(map);
 
             // search button
-            if ('opencage_apikey' in config && config.opencage_apikey != "") {
-                var options = {
-                    key: config.opencage_apikey, // TODO: Use map module's API key
-                    limit: 10,
-                };
-                var control = L.Control.openCageSearch(options).addTo(map);
+            var options = {
+                limit: 5,
+                lite: true,
+            };
+            var control = L.Control.openCageSearch(options).addTo(map);
 
-                control.setMarker(function (result) {
-                    setMarker(result.center.lat, result.center.lng);
-                });
-            }
+            control.setMarker(function (result) {
+                setMarker(result.center.lat, result.center.lng);
+            });
 
             hideMap();
 
