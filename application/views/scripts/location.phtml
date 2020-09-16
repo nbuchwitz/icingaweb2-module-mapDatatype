@@ -7,7 +7,7 @@
            type="text"
            name="<?= $this->element->getName(); ?>"
            value="<?= $this->element->getValue(); ?>"
-        <? if ($p = $this->element->getAttrib('placeholder')) {
+        <?php if ($p = $this->element->getAttrib('placeholder')) {
             print 'placeholder="' . htmlspecialchars($p) . '"';
         } ?>/>
     <button type="button" id="director-map-btn-globe" class="control-button" style="border-width: 1px;">
