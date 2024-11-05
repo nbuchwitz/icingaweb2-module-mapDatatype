@@ -6,7 +6,7 @@
     <input id="<?= $this->element->getName(); ?>"
            type="text"
            name="<?= $this->element->getName(); ?>"
-           value="<?= $this->element->getValue(); ?>"
+           value="<?= htmlspecialchars($this->element->getValue(), ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8'); ?>"
         <?php if ($p = $this->element->getAttrib('placeholder')) {
             print 'placeholder="' . htmlspecialchars($p) . '"';
         } ?>/>
