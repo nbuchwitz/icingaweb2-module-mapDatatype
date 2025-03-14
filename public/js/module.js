@@ -17,9 +17,8 @@
         },
         render: function () {
             // Fetch map config
-            var that = this;
-            $.getJSON(icinga.config.baseUrl + '/map/config/fetch?type=director', this._newMap).fail(function (jqxhr, textStatus, error) {
-                that._newMap({
+            $.getJSON(icinga.config.baseUrl + '/map/config/fetch?type=director', this._newMap).fail(() => {
+                this._newMap({
                     "default_zoom": "4",
                     "default_long": '13.377485',
                     "default_lat": '52.515855',
