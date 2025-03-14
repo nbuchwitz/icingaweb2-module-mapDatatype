@@ -1,11 +1,21 @@
 (function (Icinga) {
     var MapDatatype = function (module) {
         this.module = module;
+        this.map = null;
         this.initialize();
     };
 
+    $('#layout').on('layout-change', () => {
+        if (document.querySelector('#map-director') && icinga.modules['mapDatatype']) {
+            icinga.modules['mapDatatype'].object.render();
+        }
+    });
+
     MapDatatype.prototype = {
         initialize: function () {
+            this.module.on("rendered", this.render);
+        },
+        render: function () {
             // Fetch map config
             var that = this;
             $.getJSON(icinga.config.baseUrl + '/map/config/fetch?type=director', this._newMap).fail(function (jqxhr, textStatus, error) {
@@ -26,7 +36,12 @@
             var btn_cancel = $('#director-map-btn-cancel');
 
             var field = btn_globe.parent().find("input[type=text]");
+            // Remove the map if already initialized
+            if (this.map) {
+                this.map.remove();
+            }
             var map = L.map('map-director').setView([config.default_lat, config.default_long], config.default_zoom);
+            this.map = map;
             var marker;
 
             L.tileLayer(config.tile_url, {
