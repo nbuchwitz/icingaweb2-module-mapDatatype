@@ -1,7 +1,7 @@
 <dt>
     <?= $this->formLabel($this->element->getName(), $this->element->getLabel()); ?>
 </dt>
-<dd>
+<dd class="icinga-module module-mapDatatype" data-icinga-module="mapDatatype">
 
     <input id="<?= $this->element->getName(); ?>"
            type="text"
@@ -10,18 +10,17 @@
         <?php if ($p = $this->element->getAttrib('placeholder')) {
             print 'placeholder="' . htmlspecialchars($p) . '"';
         } ?>/>
-    <button type="button" id="director-map-btn-globe" class="control-button" style="border-width: 1px;">
+    <button type="button" id="director-map-btn-globe" class="control-button">
         <i class="icon-globe"></i>
     </button>
-    <div id="col1" class="container icinga-module module-map" data-icinga-module="map"
-         style="display: block; width: 100%;">
+    <div id="col1" class="container icinga-module module-map" data-icinga-module="map">
 
-        <div id="map-director" class="map map-home" style="height: 250px; margin-top: 0px"></div>
-        <p style="margin-top: 5px; text-align:right; max-width: unset;">
-            <button type="button" id="director-map-btn-save" class="control-button" style="border-width: 1px;">
+        <div id="map-director" class="map map-home"></div>
+        <p class="btn-container">
+            <button type="button" id="director-map-btn-save" class="control-button">
                 <i class="icon-ok"></i>
             </button>
-            <button type="button" id="director-map-btn-cancel" class="control-button" style="border-width: 1px;">
+            <button type="button" id="director-map-btn-cancel" class="control-button">
                 <i class="icon-cancel"></i>
             </button>
         </p>
@@ -31,18 +30,4 @@
     <?php if (count($this->element->getMessages()) > 0): ?>
         <?= $this->formErrors($this->element->getMessages()); ?>
     <?php endif; ?>
-    <script type="text/javascript">
-        var interval = setInterval(function () {
-            if (typeof icinga == 'undefined') return;
-            clearInterval(interval);
-
-            var modulname = "mapDatatype";
-            if (icinga.isLoadedModule(modulname)) {
-                icinga.modules.mapDatatype.initialize();
-            } else {
-                icinga.loadModule(modulname)
-            }
-
-        }, 10);
-    </script>
 </dd>
